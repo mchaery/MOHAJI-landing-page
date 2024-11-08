@@ -12,6 +12,8 @@
 	</style>
 </head>
 
+<script src="script.js"></script>
+
 <body><div class='intro-overlay'><figure class="fade-in" class="image" ><a href="logo.png"><img style="width:230px" src="logo.png"/></a></figure><h1 class='intro-title'>즐거운 시간 되세요. <span class="highlight-blue">MOHAJI</span>와 함께.</h1></div><div >
 <p class="fade-in" class="page-description"></p></header><div class="page-body"><div class="column-list"><div style="width:37.5%" class="column"><figure class="fade-in"class="image" style="text-align:left"><a href="screen1.jpg"><img style="width:230px" src="screen1.jpg"/></a></figure></div><div style="width:82.5%" class="column"><h2 class="fade-in" class=""><mark class="highlight-gray"><strong>시간도 남는데, <br/><span class="highlight-blue">모하지..?</span><br/></strong></mark></h2><p class="fade-in" class="">
 </p><h2 class="fade-in" class=""><mark class="highlight-gray"><strong>이대로 헤어지기 아쉬운데, <br/><span class="highlight-blue">모하지..?</span><br/></strong></mark></h2><p class="fade-in" class="">
@@ -37,117 +39,6 @@
 </p></div><div style="width:50%" class="column"><h1 class="fade-in" class=""><a href="https://www.apple.com/app-store/">무료로 시작하세요 →</a></h1></div><div style="width:25%" class="column"><p class="fade-in" class="">
 </p></div></div><p class="fade-in" class="">
 </p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const faders = document.querySelectorAll('.fade-in');
-
-  const appearOptions = {
-    threshold: 0.5, 
-    rootMargin: "0px 0px -50px 0px"
-  };
-
-  const appearOnScroll = new IntersectionObserver(function(
-    entries,
-    appearOnScroll
-  ) {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) {
-        return;
-      } else {
-        entry.target.classList.add('show');
-        appearOnScroll.unobserve(entry.target);
-      }
-    });
-  }, appearOptions);
-
-  faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-  });
-});
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const faders = document.querySelectorAll('.fade-in');
-  const introOverlay = document.querySelector('.intro-overlay');
-
-  // Hide the intro overlay on the first scroll event
-  window.addEventListener('scroll', () => {
-    if (introOverlay) {
-      introOverlay.classList.add('hidden');
-    }
-  }, { once: true });
-
-  const appearOptions = {
-    threshold: 0.5, 
-    rootMargin: "0px 0px -50px 0px"
-  };
-
-  const appearOnScroll = new IntersectionObserver(function(
-    entries,
-    appearOnScroll
-  ) {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) {
-        return;
-      } else {
-        entry.target.classList.add('show');
-        appearOnScroll.unobserve(entry.target);
-      }
-    });
-  }, appearOptions);
-
-  faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-  });
-});
-</script>
-</div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const faders = document.querySelectorAll('.fade-in');
-  const introOverlay = document.querySelector('.intro-overlay');
-
-  // Show or hide intro overlay based on scroll position
-  let lastScrollTop = 0;
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop < 100) { // Show overlay when near the top
-      introOverlay.classList.remove('hidden');
-    } else if (scrollTop > lastScrollTop) { // Hide overlay when scrolling down
-      introOverlay.classList.add('hidden');
-    }
-
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
-  });
-
-  // Appear on scroll effect
-  const appearOptions = {
-    threshold: 0.5, 
-    rootMargin: "0px 0px -50px 0px"
-  };
-
-  const appearOnScroll = new IntersectionObserver(function(
-    entries,
-    appearOnScroll
-  ) {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) {
-        return;
-      } else {
-        entry.target.classList.add('show');
-        appearOnScroll.unobserve(entry.target);
-      }
-    });
-  }, appearOptions);
-
-  faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-  });
-});
-</script>
 </body>
-
 
 </html>
